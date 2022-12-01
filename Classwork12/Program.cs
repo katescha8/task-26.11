@@ -52,16 +52,20 @@ namespace ClassWork12
         {
             BookContainer bc = new BookContainer();
             Book b1 = new Book("Пелевин","Тайные виды на гору Фудзи", "Заря", bc);
-            BookSort title = new BookSort(SortBooks);
-            bc.Sort(title(b1.title));
+            Book b2 = new Book("Толстой", "Воскресение", "дАрт", bc);
+            Book b3 = new Book("Замятин", "Мы", "КнижныйМир", bc);
+            bc.Sort(Book.CompareByTitle);
+            bc.Show();
+            Console.WriteLine();
+            bc.Sort(Book.CompareByAuthor);
+            bc.Show();
+            Console.WriteLine();
+            bc.Sort(Book.CompareByPublishing);
+            bc.Show();
         }
         static void Main(string[] args)
         {
-            HomeTask_12_1();
-        }
-        public static void SortBooks(string s)
-        {
-
+            HomeTask_12_2();
         }
     }
 }
